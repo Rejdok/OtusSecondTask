@@ -20,6 +20,11 @@ target_compile_definitions(
 	PRIVATE "BOOST_TEST_DYN_LINK=1"
 )
 
+target_link_libraries(
+	test_ip
+	${Boost_UNIT_TEST_FRAMEWORK_LIBRARY}
+)
+
 install(TARGETS ip_filter RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR "DEB")
@@ -33,4 +38,4 @@ include(CPack)
 
 
 enable_testing()
-add_test(test_version test_version)
+add_test(test_ip test_ip)
