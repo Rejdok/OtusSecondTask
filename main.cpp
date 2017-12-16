@@ -61,7 +61,7 @@ void filter_any(const uint8_t& val, const IPAddresContainer& IPVector) {
 	};
 }
 void lexicographicalSort(IPAddresContainer &ip_pool){
-	std::sort(ip_pool.begin(), ip_pool.end(), [](IPAdress& f, IPAdress& s) {
+	std::sort(ip_pool.begin(), ip_pool.end(), [](const IPAdress& f,const IPAdress& s) {
 			for (size_t i = 0; i < 4; i++) {
 				if (f.IPAddresDecoded[i] > s.IPAddresDecoded[i]) {
 					return true;
