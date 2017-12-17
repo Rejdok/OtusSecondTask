@@ -75,7 +75,7 @@ void filter_any(const uint8_t& val, const IPAddresContainer& IPVector) {
 		}
 	};
 }
-void lexicographicalSort(IPAddresContainer &ip_pool) {
+void reverceLexicographicalSort(IPAddresContainer &ip_pool) {
 	std::sort(ip_pool.begin(), ip_pool.end(), [](const IPAdress& f, const IPAdress& s) {
 		for (size_t i = 0; i < 4; i++) {
 			if (f.IPAddressDecoded[i] > s.IPAddressDecoded[i]) {
@@ -97,7 +97,7 @@ int main(int argc, char const *argv[]) {
 		for (std::string line; std::getline(std::cin, line);) {
 			ip_pool.push_back(IPAdress{ std::string(line.begin(), std::find(line.begin(), line.end(), '\t')) });
 		}
-		lexicographicalSort(ip_pool);
+		reverceLexicographicalSort(ip_pool);
 		for (const auto& i : ip_pool) {
 			std::cout << i << std::endl;
 		}
